@@ -42,15 +42,15 @@ describe('WordWrap should', () => {
     }).toThrow(/Invalid/);
   });
 
-  // it('not accept negative numbers as column size', () => {
-  //   expect(() => {
-  //     wordWrap.wrap(new CharChain('hola'), -1);
-  //   }).toThrow(/Invalid/);
-  // });
+  it('not accept negative numbers as column size', () => {
+    expect(() => {
+      wordWrap.wrap(new CharChain('hola'), -1);
+    }).toThrow(/Invalid/);
+  });
 
   // it('combine space separation and cutting words for splitting lines', () => {
-  //   expect(wordWrap.wrap('sajdf sad sadfsadfsaffsda', 7)).toBe(
-  //     'sajdf\nsad\nsadfsad\nfsaffsd\na',
+  //   expect(wordWrap.wrap(new CharChain('sajdf sad sadfsadfsaffsda'), 7)).toStrictEqual(
+  //     new CharChain('sajdf\nsad\nsadfsad\nfsaffsd\na'),
   //   );
   // });
 });

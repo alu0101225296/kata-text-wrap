@@ -4,7 +4,7 @@ import { CharChain } from './CharChain';
 
 export class WordWrap {
   wrap(text: CharChain, columnSize: number): CharChain {
-    if(columnSize === 0) {
+    if(columnSize <= 0) {
       throw new Error('Invalid column size. Zero not valid');
     }
     if(text.length() < columnSize)
