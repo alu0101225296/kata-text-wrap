@@ -28,12 +28,12 @@ describe('WordWrap should', () => {
     expect(wordWrap.wrap(new CharChain('hola'), 2)).toStrictEqual(new CharChain('ho\nla'));
   });
 
-  // it('accept empty string and dont make any change', () => {
-  //   expect(wordWrap.wrap('', 4)).toBe('');
-  // });
+  it('accept empty string and dont make any change', () => {
+    expect(wordWrap.wrap(new CharChain(''), 4)).toStrictEqual(new CharChain(''));
+  });
 
   // it('separate words by spaces if text is longer than column size', () => {
-  //   expect(wordWrap.wrap('hola adios', 7)).toBe('hola\nadios');
+  //   expect(wordWrap.wrap(new CharChain('hola adios'), 7)).toStrictEqual('hola\nadios');
   // });
 
   // it('not accept 0 as column size', () => {
