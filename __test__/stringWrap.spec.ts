@@ -36,15 +36,15 @@ describe('WordWrap should', () => {
     expect(wordWrap.wrap(new CharChain('hola adios'), 7)).toStrictEqual(new CharChain('hola\nadios'));
   });
 
-  // it('not accept 0 as column size', () => {
-  //   expect(() => {
-  //     wordWrap.wrap('hola', 0);
-  //   }).toThrow(/Invalid/);
-  // });
+  it('not accept 0 as column size', () => {
+    expect(() => {
+      wordWrap.wrap(new CharChain('hola'), 0);
+    }).toThrow(/Invalid/);
+  });
 
   // it('not accept negative numbers as column size', () => {
   //   expect(() => {
-  //     wordWrap.wrap('hola', -1);
+  //     wordWrap.wrap(new CharChain('hola'), -1);
   //   }).toThrow(/Invalid/);
   // });
 
