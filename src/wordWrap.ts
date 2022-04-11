@@ -12,12 +12,11 @@ export class WordWrap {
   
     const spaceIndex = text.lastIndexOf(new Char(' '));
     if (spaceIndex > 0) {
-      text.changeCharacter(spaceIndex, new Char('\n'))
-    }
-    else{
-      text.addToChain(columnSize, new Char('\n'));
+      text.changeCharacter(spaceIndex, new Char('\n'));
+      return text;
     }
 
+    text.addToChain(columnSize, new Char('\n'));
     return text;
   }
   
