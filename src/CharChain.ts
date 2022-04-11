@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Char } from "./Char";
+import { Integer } from "./Integer";
   
 
 export class CharChain {
@@ -15,29 +16,29 @@ export class CharChain {
     this.chars = stringToParse;
   }
 
-  changeCharacter(position: number, character: Char):void {
-    this.chars.splice(position, 1, character);
+  changeCharacter(position: Integer, character: Char):void {
+    this.chars.splice(position.getValue(), 1, character);
   }
   
-  addToChain(position:number, character:Char):void {
-    this.chars.splice(position, 0, character);
+  addToChain(position:Integer, character:Char):void {
+    this.chars.splice(position.getValue(), 0, character);
   }
 
-  length():number {
-    return this.chars.length;
+  length():Integer {
+    return new Integer(this.chars.length);
   }
 
-  slice(start: number, end: number): CharChain {
-    return new CharChain(this.chars.slice(start, end));
+  slice(start: Integer, end: Integer): CharChain {
+    return new CharChain(this.chars.slice(start.getValue(), end.getValue()));
   }
 
-  lastIndexOf(character: Char):number {
+  lastIndexOf(character: Char):Integer {
     for(let i = this.chars.length - 1; i >= 0; i--) {
       if(this.chars[i].value() === character.value()) {
-        return i;
+        return new Integer(i);
       }
     }
-    return -1;
+    return new Integer(-1);
   }
 
   concat(anotherCharChain: CharChain): CharChain {
