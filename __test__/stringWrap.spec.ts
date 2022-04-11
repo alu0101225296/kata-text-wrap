@@ -24,9 +24,9 @@ describe('WordWrap should', () => {
     expect(wordWrap.wrap(new CharChain('hola'), 7)).toStrictEqual(new CharChain('hola'));
   });
 
-  // it('cut word if it is longer than column size', () => {
-  //   expect(wordWrap.wrap('hola', 2)).toBe('ho\nla');
-  // });
+  it('cut word if it is longer than column size', () => {
+    expect(wordWrap.wrap(new CharChain('hola'), 2)).toStrictEqual(new CharChain('ho\nla'));
+  });
 
   // it('accept empty string and dont make any change', () => {
   //   expect(wordWrap.wrap('', 4)).toBe('');

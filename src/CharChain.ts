@@ -11,6 +11,14 @@ export class CharChain {
       .forEach(character => this.chars.push(new Char(character)));
   }
 
+  addToChain(position:number, char:Char):void {
+    this.chars.splice(position, 0, char);
+  }
+
+  length():number {
+    return this.chars.length;
+  }
+
 }
 
 
