@@ -10,7 +10,6 @@ export class WordWrap {
     if(text.length() <= columnSize)
       return text;
     
-    console.log(text);
     const spaceIndex = text.slice(0, columnSize).lastIndexOf(new Char(' '));
     if (spaceIndex > 0) {
       text.changeCharacter(spaceIndex, new Char('\n'));
