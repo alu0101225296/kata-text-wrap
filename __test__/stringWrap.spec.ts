@@ -45,9 +45,9 @@ describe('WordWrap should', () => {
     }).toThrow(/Invalid/);
   });
 
-  // it('combine space separation and cutting words for splitting lines', () => {
-  //   expect(wordWrap.wrap(new CharChain('sajdf sad sadfsadfsaffsda'), 7)).toStrictEqual(
-  //     new CharChain('sajdf\nsad\nsadfsad\nfsaffsd\na'),
-  //   );
-  // });
+  it('combine space separation and cutting words for splitting lines', () => {
+    expect(wordWrap.wrap(new CharChain('sajdf sad sadfsadfsaffsda'), 7)).toStrictEqual(
+      new CharChain('sajdf\nsad\nsadfsad\nfsaffsd\na'));
+  });
+
 });
