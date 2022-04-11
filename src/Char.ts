@@ -7,4 +7,8 @@ export class Char {
     }
     this.char = char;
   }
+
+  value(): string {
+    return this.char;
+  }
 }

@@ -32,9 +32,9 @@ describe('WordWrap should', () => {
     expect(wordWrap.wrap(new CharChain(''), 4)).toStrictEqual(new CharChain(''));
   });
 
-  // it('separate words by spaces if text is longer than column size', () => {
-  //   expect(wordWrap.wrap(new CharChain('hola adios'), 7)).toStrictEqual('hola\nadios');
-  // });
+  it('separate words by spaces if text is longer than column size', () => {
+    expect(wordWrap.wrap(new CharChain('hola adios'), 7)).toStrictEqual(new CharChain('hola\nadios'));
+  });
 
   // it('not accept 0 as column size', () => {
   //   expect(() => {
