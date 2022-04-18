@@ -34,13 +34,13 @@ describe('WordWrap should', () => {
     expect(wordWrap.wrap('hola adios', 7)).toBe('hola\nadios');
   });
 
-  /*
   it('not accept 0 as column size', () => {
     expect(() => {
       wordWrap.wrap('hola', 0);
     }).toThrow(/Invalid/);
   });
 
+  /*
   it('not accept negative numbers as column size', () => {
     expect(() => {
       wordWrap.wrap('hola', -1);
