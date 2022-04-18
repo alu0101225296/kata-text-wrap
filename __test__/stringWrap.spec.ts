@@ -21,11 +21,11 @@ describe('WordWrap should', () => {
   it('accept word if length is less than column size', () => {
     expect(wordWrap.wrap('hola', 7)).toBe('hola');
   });
-  /*
+  
   it('cut word if it is longer than column size', () => {
     expect(wordWrap.wrap('hola', 2)).toBe('ho\nla');
   });
-
+  /*
   it('accept empty string and dont make any change', () => {
     expect(wordWrap.wrap('', 4)).toBe('');
   });
