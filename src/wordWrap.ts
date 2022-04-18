@@ -11,10 +11,12 @@ export class WordWrap {
       let slice = text.slice(limit - columnSize, limit);
       let spaceIndex = slice.lastIndexOf(' ');
       if (spaceIndex > 0) {
+        spaceIndex = limit - columnSize + spaceIndex;
         text =
-          text.slice(0, limit - columnSize + spaceIndex) +
+          text.slice(0, spaceIndex) +
           '\n' +
-          text.slice(limit - columnSize + spaceIndex + 1);
+          text.slice(spaceIndex + 1);
+        limit = spaceIndex + 1;
       } else {
         text = text.slice(0, limit) + '\n' + text.slice(limit);
         limit++;
