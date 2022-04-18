@@ -3,11 +3,16 @@
  */
 export class WordWrap {
   wrap(text: string, columnSize: number): string {
-    //let addNewLineRegex : RegExp = new RegExp(`.{${columnSize}}`, 'g');
-    //text = text.replace(addNewLineRegex, '$0\n');
 
-    for(let limit = columnSize; limit < text.length; limit += columnSize + 1) {
-      text = text.slice(0, limit) + '\n' + text.slice(limit);
+    for(let limit = columnSize; limit < text.length; limit += columnSize) {
+      let slice = text.slice(limit - columnSize, limit);
+      let spaceIndex = slice.lastIndexOf(" ");
+      if(spaceIndex > 0) {
+        text = text.slice(0, limit - columnSize + spaceIndex) + '\n' + text.slice(limit - columnSize + spaceIndex + 1);
+      } else {
+        text = text.slice(0, limit) + '\n' + text.slice(limit);
+        limit ++; 
+      }
     }
     return text;
   }

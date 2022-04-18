@@ -25,7 +25,7 @@ describe('WordWrap should', () => {
   it('cut word if it is longer than column size', () => {
     expect(wordWrap.wrap('hola', 2)).toBe('ho\nla');
   });
-  /*
+  
   it('accept empty string and dont make any change', () => {
     expect(wordWrap.wrap('', 4)).toBe('');
   });
@@ -34,6 +34,7 @@ describe('WordWrap should', () => {
     expect(wordWrap.wrap('hola adios', 7)).toBe('hola\nadios');
   });
 
+  /*
   it('not accept 0 as column size', () => {
     expect(() => {
       wordWrap.wrap('hola', 0);
