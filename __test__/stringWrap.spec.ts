@@ -40,13 +40,12 @@ describe('WordWrap should', () => {
     }).toThrow(/Invalid/);
   });
 
-  /*
   it('not accept negative numbers as column size', () => {
     expect(() => {
       wordWrap.wrap('hola', -1);
     }).toThrow(/Invalid/);
   });
-
+  /*
   it('combine space separation and cutting words for splitting lines', () => {
     expect(wordWrap.wrap('sajdf sad sadfsadfsaffsda', 7)).toBe(
       'sajdf\nsad\nsadfsad\nfsaffsd\na',
